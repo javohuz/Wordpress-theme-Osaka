@@ -1,0 +1,4 @@
+# Ignore assets directories
+assets/icons/
+assets/images/
+assets/movie/

@@ -1,0 +1,23 @@
+/*
+Theme Name: Your Theme Name
+Theme URI: http://example.com
+Author: Your Name
+Author URI: http://example.com
+Description: A brief description of the theme.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: custom, responsive, etc.
+*/
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+}

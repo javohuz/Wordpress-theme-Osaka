@@ -1,0 +1,81 @@
+.banner-wrapper-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    position: relative;
+    overflow: visible;
+    position: fixed;
+    bottom: 20px;
+    right: 0%;
+    z-index: 1000;
+}
+
+.close-btn {
+    position: absolute;
+    top: -1rem;
+    right: 2rem;
+    background-color: white;
+    border: 0.1rem solid #939393;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.5rem;
+}
+
+.mini-banner {
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #07027b, #8d20a5);
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 24.7rem;
+    width: 100%;
+    max-height: 26.5rem;
+}
+
+.mini-banner .banner-left-title{
+    color: var(--unnamed-color-ffffff);
+    text-align: left;
+    font-family: Noto Sans JP;
+    font-size: 2.2rem;
+    letter-spacing: 0px;
+}
+
+.mini-banner .banner-left-text{
+    color: var(--unnamed-color-ffffff);
+    text-align: left;
+    font-family: Noto Sans JP;
+    font-size: 1.4rem;
+    letter-spacing: 0px;
+    padding: 1.4rem 0;
+}
+
+.banner-wrapper-right .mini-banner .banner-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.banner-wrapper-right .mini-banner .banner-right .arrow-white {
+    border: 1px solid var(--unnamed-color-ffffff);
+    border-radius: 5px;
+    padding: 0.7rem;
+    width: 3rem;
+    height: 3rem;
+}
+
+.banner-wrapper-right .mini-banner .banner-right img {
+    width: 13rem;
+    height: 13rem;
+}
+
+@media (max-width: 960px) {
+    .banner-wrapper-right {
+        display: none;
+    }
+}
