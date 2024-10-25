@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+
 // pagination js 
 function updatePaginationDisplay() {
     const paginationLinks = document.querySelectorAll('.pagination .case-page');
@@ -38,3 +40,20 @@ function updatePaginationDisplay() {
 updatePaginationDisplay();
 window.addEventListener('resize', updatePaginationDisplay);
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    const dropDown = document.querySelector('.lpr-drop-down');
+    const archiveItems = document.getElementById('archiveItems');
+    const dropdownIcon = dropDown.querySelector('.dropdown-icon');
+
+    dropDown.addEventListener('click', function() {
+      // Toggle display of archive items
+      if (archiveItems.style.display === 'flex') {
+        archiveItems.style.display = 'none';
+        dropdownIcon.style.transform = 'rotate(0deg)'; // Reset rotation
+      } else {
+        archiveItems.style.display = 'flex';
+        dropdownIcon.style.transform = 'rotate(180deg)'; // Rotate icon
+      }
+    });
+  });

@@ -96,6 +96,7 @@
 
 .news-detail-content {
     display: flex;
+    flex-direction: column;
     width: 100%;
     justify-content: flex-start;
     align-items: flex-start;
@@ -122,6 +123,8 @@
     align-items: center;
     gap: 2rem;
     min-width: fit-content;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .news-detail-items-red span {

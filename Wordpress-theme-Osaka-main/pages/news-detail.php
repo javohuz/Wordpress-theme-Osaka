@@ -1,25 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> 37 News details </title>
 
-    <!-- Layout css  -->
-    <link rel="stylesheet" href="../assets/styles/main_layout.css" />
-    <link rel="stylesheet" href="../assets/styles/footer.css">
-    <link rel="stylesheet" href="../assets/styles/header.css" />
-    <link rel="stylesheet" href="../assets/styles/root_javo.css" />
 
-    <!-- pages css  -->
-    <link rel="stylesheet" href="../assets/style_pages/37-news-detail.css" />
-</head>
 
-<body>
+
+
+<?php
+get_header();
+?>
+
+<section class="news-detail-section container-nl">
+    <div class="news-detail-main-content contener-clp">
+        <?php
+        $post_id = isset($_GET['post_id']) ? intval($_GET['post_id']) : 0;
+        
+        $post = get_post($post_id);
+        
+        if ($post) :
+            setup_postdata($post); ?>
+            <div class="news-detail-items">
+                <a class="news-detail-items-right" >
+                    <h1><?php the_title(); ?></h1>
+                </a>
+                <div class="news-detail-items-red">
+                    <a href="#" class="bg-red">重要なお知らせ</a>
+                    <span><?php echo get_the_date('Y.m.d'); ?></span>
+                </div>
+            </div>
+            <div class="news-detail-content">
+                <p><?php echo apply_filters('the_content', $post->post_content); ?></p>
+            </div>
+            <div class="news-detail-title-2">
+                <a href="<?php echo get_post_type_archive_link('post'); ?>" class="news-detail-btn-2">
+                    <p><span>😃</span> 一覧を見る</p>
+                </a>
+            </div>
+        <?php 
+            wp_reset_postdata(); 
+        else :
+            echo '<p>No details found.</p>';
+        endif; ?>
+    </div>
+</section>
+
+<?php get_footer(); ?>
+
+
+
+
 
    
-
     <!-- news list section stars -->
 
     <div class="title-list-pages container-nl">

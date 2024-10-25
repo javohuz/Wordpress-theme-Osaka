@@ -1,7 +1,14 @@
 
 
-
    
+
+
+
+
+
+
+
+
 
 
     <!-- news list section stars -->
@@ -35,86 +42,36 @@
                 <a href="#">オープンキャンパス情報</a>
             </div>
 
+            
             <div class="news-list-items contener-clp">
-                <div class="news-list-item">
-                    <div class="news-list-items-red">
-                        <span>2024.03.15</span>
-                        <a href="#">重要なお知らせ</a>
-                    </div>
-                    <a class="news-list-items-right" href="#">【一般入試出願締め切り間近！】</a>
-                </div>
+            <div class="news-container">
+                <?php 
+                $news_query = new WP_Query([
+                    'post_type'      => 'post', 
+                    'posts_per_page' => 5, 
+                    'orderby'        => 'date',
+                    'order'          => 'DESC'
+                ]);
 
-                <div class="news-list-item">
-                    <div class="news-list-items-left">
-                        <span>2024.03.15</span>
-                        <a href="#">お知らせ</a>
-                    </div>
-                    <a class="news-list-items-right" href="#">プロダクトデザインコース卒業制作その2</a>
-                </div>
+                if ($news_query->have_posts()) :
+                    while ($news_query->have_posts()) : $news_query->the_post(); ?>
+                        <div class="news-list-item">
+                            <div class="news-list-items-red">
+                                <span><?php echo get_the_date('Y.m.d'); ?></span>
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </div>
+                            <a class="news-list-items-right" href="<?php the_permalink(); ?>">
+                                【<?php echo wp_trim_words(get_the_excerpt(), 10, '...'); ?>】
+                            </a>
+                        </div>
+                    <?php endwhile;
+                    wp_reset_postdata(); 
+                else : ?>
+                    <p>No news found.</p>
+                <?php endif; ?>
+            </div>
 
-                <div class="news-list-item">
-                    <div class="news-list-items-left">
-                        <span>2024.03.15</span>
-                        <a href="#">入試情報</a>
-                    </div>
-                    <a class="news-list-items-right" href="#">【3学期末パーティー✨】</a>
-                </div>
-
-                <div class="news-list-item">
-                    <div class="news-list-items-left">
-                        <span>2024.03.15</span>
-                        <a href="#">入試情報</a>
-                    </div>
-                    <a class="news-list-items-right" href="">1月15日(土)オープンキャンパス予約受付中！</a>
-                </div>
-
-                <div class="news-list-item">
-                    <div class="news-list-items-left">
-                        <span>2024.03.15</span>
-                        <a href="#">オープンキャンパス情報</a>
-                    </div>
-                    <a class="news-list-items-right" href="#">プレ授業を開催しました!次回12月7日(土)オープンキャンパス予約受付中！</a>
-                </div>
-
-                <div class="news-list-item">
-                    <div class="news-list-items-left">
-                        <span>2024.03.15</span>
-                        <a href="#">オープンキャンパス情報</a>
-                    </div>
-                    <a class="news-list-items-right" href="#">プレ授業を開催しました！次回12月7日(土)オープンキャンパス予約受付中！</a>
-                </div>
-
-                <div class="news-list-item">
-                    <div class="news-list-items-left">
-                        <span>2024.03.15</span>
-                        <a href="#">オープンキャンパス情報</a>
-                    </div>
-                    <a class="news-list-items-right" href="#">プレ授業を開催しました！次回12月7日(土)オープンキャンパス予約受付中！</a>
-                </div>
-
-                <div class="news-list-item">
-                    <div class="news-list-items-left">
-                        <span>2024.03.15</span>
-                        <a href="#">オープンキャンパス情報</a>
-                    </div>
-                    <a class="news-list-items-right" href="#">プレ授業を開催しました！次回12月7日(土)オープンキャンパス予約受付中！</a>
-                </div>
-
-                <div class="news-list-item">
-                    <div class="news-list-items-left">
-                        <span>2024.03.15</span>
-                        <a href="#">オープンキャンパス情報</a>
-                    </div>
-                    <a class="news-list-items-right" href="#">プレ授業を開催しました！次回12月7日(土)オープンキャンパス予約受付中！</a>
-                </div>
-
-                <div class="news-list-item">
-                    <div class="news-list-items-left">
-                        <span>2024.03.15</span>
-                        <a href="#">オープンキャンパス情報</a>
-                    </div>
-                    <a class="news-list-items-right" href="#">プレ授業を開催しました！次回12月7日(土)オープンキャンパス予約受付中！</a>
-                </div>
+               
 
 
             </div>
@@ -133,7 +90,7 @@
                 <a href="#page3" class="case-page">3</a>
                 <a href="#page3" class="case-page">4</a>
                 <a href="#page3" class="case-page">5</a>
-                <a class="case-page">...</a>
+                <p class="case-page">...</p>
                 <a href="#page7" class="case-page">100</a>
 
                 <a href="#next" class="next active">

@@ -210,7 +210,7 @@
     <!-- news list section finished -->
 
     <!-- two cards starts -->
-    <section class="two_cards for_phone">
+    <!-- <section class="two_cards for_phone">
         <div class="tc_wrapper">
 
             <a class="kard" id="bir">
@@ -262,7 +262,7 @@
                 </div>
             </a>
         </div>
-    </section>
+    </section> -->
 
     <!-- two cards ends -->
 
